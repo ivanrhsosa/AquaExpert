@@ -8,4 +8,7 @@ pinned: false
 license: openrail
 ---
 
-Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
+## AquaExpert: Industrial Water Treatment Advisory System
+
+Demo Day
+RAG Tools: Langchain, FAISS, Hugging Face, OpenAI, and Chainlit
