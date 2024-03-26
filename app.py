@@ -374,9 +374,7 @@ async def main(message: cl.Message):
 
     result = agent_chain.invoke({"question" : message.content})
 
-    result_content = result["response"].content
-    print(result_content)
-    msg.content = result_content
+    msg.content = result
 
     # Send and close the message stream
     await msg.send()
