@@ -374,7 +374,21 @@ async def main(message: cl.Message):
 
     result = agent_chain.invoke({"question" : message.content})
 
-    msg.content = result
+    if hasattr(result, 'content'):
+        # If 'result' is an object with a 'content' attribute
+        text_content = result.content
+        print("object")
+    elif isinstance(result, dict) and 'content' in result:
+        # If 'result' is a dictionary and has a 'content' key
+        text_content = result['content']
+        print("dict")
+    else:
+        # Otherwise, assume 'result' is already the text content
+        text_content = result
+        print("text")
+
+    # Now, 'text_content' holds the actual text, so assign it to 'msg.content'
+    msg.content = text_content
 
     # Send and close the message stream
     await msg.send()
