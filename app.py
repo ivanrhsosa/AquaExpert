@@ -30,7 +30,7 @@ from langchain_core.utils.function_calling import convert_to_openai_tool
 from langchain_core.messages import BaseMessage, FunctionMessage, HumanMessage
 from langchain.output_parsers.openai_tools import PydanticToolsParser
 from langchain_core.pydantic_v1 import BaseModel, Field
-from langchain_openai import ChatOpenAI
+from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langgraph.prebuilt import ToolInvocation
 from langchain_core.output_parsers import StrOutputParser
 from langgraph.graph import END, StateGraph
